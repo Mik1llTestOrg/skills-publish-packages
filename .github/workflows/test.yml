@@ -1,5 +1,7 @@
 on: [workflow_dispatch]
 name: Test
+permissions:
+  issues: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
