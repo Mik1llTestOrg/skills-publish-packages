@@ -11,6 +11,6 @@ jobs:
         with:
           fail-on-denial: true
           secret: ${{ github.token }}
-          approvers: team:testteam
+          approvers: testteam
           minimum-approvals: 1
           issue-body: Run tests against the staging slot
