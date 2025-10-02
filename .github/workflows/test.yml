@@ -1,0 +1,16 @@
+on: [workflow_dispatch]
+name: Test
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: deploy
+    environment: test
+    steps:
+      - name: Require Approval
+        uses: trstringer/manual-approval@v1
+        with:
+          fail-on-denial: true
+          secret: ${{ github.token }}
+          approvers: team:testteam
+          minimum-approvals: 1
+          issue-body: Run tests against the staging slot
